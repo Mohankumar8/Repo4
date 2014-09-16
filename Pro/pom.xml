@@ -1,8 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>HelloWorld</groupId>
-  <artifactId>HelloWorld</artifactId>
+  <groupId>com.example.pro</groupId>
+  <artifactId>Project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+ 
   <dependencies>
       <dependency>
           <groupId>junit</groupId>
@@ -10,7 +12,16 @@
           <version>4.8.2</version>  
           <scope>test</scope>
           </dependency>
-  </dependencies>
+          
+              </dependencies>
+  <reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+			</plugin>
+			</plugins>
+	</reporting>	
   <build>
     <sourceDirectory>gen</sourceDirectory>
     <plugins>
@@ -39,26 +50,21 @@
           <version>3.9.0-rc.1</version>
           <configuration>
               <sdk>
-                  <path>D:\Mohan\One\adt-bundle\adt-bundle-windows-x86-20140702\sdk</path>
+                  <path>C:\Mohan\One\adt-bundle\sdk</path>
                   <platform>14</platform>
                </sdk>
           <device>emulator</device>
           <emulator>
               <avd>Nexus7</avd>
-			  <wait>60000</wait>
+              <wait>60000</wait>
           </emulator>
-		  <deleteConflictingFiles>true</deleteConflictingFiles>
+		  <emulator>
+              <avd>Nexus5</avd>
+              <wait>60000</wait>
+          </emulator>
+          <deleteConflictingFiles>true</deleteConflictingFiles>
           <undeployBeforeDeploy>true</undeployBeforeDeploy>
           </configuration>
-		  <executions>
-		  <execution>
-					<id>stopEmulator</id>
-					<phase>post-integration-test</phase>
-					<goals>
-						<goal>emulator-stop</goal>
-					</goals>
-				</execution>
-			</executions>	
           <extensions>true</extensions>
       </plugin>
        <plugin>
@@ -75,9 +81,10 @@
               </execution>
             </executions>
             <configuration>
-              <executable>D:\Mohan\One\pro.bat</executable>
+              <executable>pro.bat</executable>
             </configuration>
-          </plugin>
+          </plugin> 
 		  </plugins>
-    		  </build>
+  </build>
+  	
 </project>
