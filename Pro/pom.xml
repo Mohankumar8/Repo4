@@ -58,10 +58,6 @@
               <avd>Nexus7</avd>
               <wait>60000</wait>
           </emulator>
-		  <emulator>
-              <avd>Nexus5</avd>
-              <wait>60000</wait>
-          </emulator>
           <deleteConflictingFiles>true</deleteConflictingFiles>
           <undeployBeforeDeploy>true</undeployBeforeDeploy>
           </configuration>
